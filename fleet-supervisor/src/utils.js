@@ -7,6 +7,6 @@ module.exports.getIPAddress = () => {
 }
 
 module.exports.restartBalenaService = (serviceName) => {
-  let command = `docker restart ${serviceName}"`
+  let command = `docker restart $(docker ps -q --filter "name=${serviceName}")`
   console.log(execSync(command))
 }
