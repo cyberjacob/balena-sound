@@ -8,5 +8,5 @@ module.exports.getIPAddress = () => {
 
 module.exports.restartBalenaService = (serviceName) => {
   let command = `docker restart ${serviceName}"`
-  execSync(command)
+  console.log(execSync(command))
 }

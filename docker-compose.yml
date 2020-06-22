@@ -20,6 +20,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
       - INTERFACE=wlan0
+    depends_on:
+      - fleet-superviso
   snapcast-server:
     build: 
       context: ./snapcast-server
