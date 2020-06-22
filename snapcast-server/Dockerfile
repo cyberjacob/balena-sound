@@ -1,7 +1,6 @@
-FROM node-dood-base
+FROM ivdata/snapserver
 
-COPY . .
-RUN JOBS=MAX npm install --only=production
+COPY snapserver.conf /etc/snapserver.conf
 
 COPY start.sh /usr/src/
 RUN chmod +x /usr/src/start.sh

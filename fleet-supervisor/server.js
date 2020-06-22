@@ -12,12 +12,10 @@ const fleetSubscriber = new cote.Subscriber({ name: 'Fleet subscriber' })
 // On audio playback, set this server as the master
 // Pi 1 family is not powerful enough to run snapcast-server, don't attempt to connect
 // If Client Only mode is activated, don't attempt to connect
-if (process.env.BALENA_DEVICE_TYPE !== 'raspberry-pi' && !process.env.CLIENT_ONLY_MULTI_ROOM) {
-  snapcastServer.connect()
-  snapcastServer.onPlayback((data) => {
-    fleetPublisher.publish('fleet-update', { master: getIPAddress() })
-  })
-}
+snapcastServer.connect()
+snapcastServer.onPlayback((data) => {
+  fleetPublisher.publish('fleet-update', { master: getIPAddress() })
+})
 
 // Handle fleet-update events
 // Whenever the master server changes, reset snapcast-client service

@@ -9,6 +9,7 @@
   "author": "Tomás Migone <tomas@balena.io",
   "license": "Apache-2.0",
   "dependencies": {
-    "cote": "^1.0.0"
+    "cote": "^1.0.0",
+    "local-ip": "^2.0.0"
   }
 }
