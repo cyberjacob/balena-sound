@@ -8,6 +8,7 @@ services:
     volumes:
       - bluetoothcache:/var/cache/bluetooth
       - snapcast:/var/cache/snapcast
+      - /run/dbus/system_bus_socket:/run/dbus/system_bus_socket
   fleet-supervisor:
     build: ./fleet-supervisor
     restart: on-failure
