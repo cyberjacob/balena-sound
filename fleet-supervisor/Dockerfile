@@ -1,4 +1,4 @@
-FROM node
+FROM node:buster
 
 RUN apt-get update -qq; apt-get install -y --no-install-recommends docker.io
 
