@@ -21,7 +21,7 @@ services:
     environment:
       - INTERFACE=wlan0
     depends_on:
-      - fleet-superviso
+      - snapcast-server
   snapcast-server:
     build: 
       context: ./snapcast-server
@@ -39,6 +39,8 @@ services:
     privileged: true
     volumes:
       - snapcast:/var/cache/snapcast
+    depends_on:
+      - fleet-supervisor
 volumes:
   bluetoothcache:
   snapcast:
