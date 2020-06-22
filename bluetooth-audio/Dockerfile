@@ -1,6 +1,6 @@
 FROM balenalib/raspberrypi3-debian:stretch
 
-ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
+ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/dbus/system_bus_socket
 ENV UDEV=1
 
 RUN apt-get update -qq; apt-get install -y --no-install-recommends \
