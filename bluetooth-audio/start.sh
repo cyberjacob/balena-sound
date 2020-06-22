@@ -4,7 +4,7 @@ if [[ -z "$DEVICE_NAME" ]]; then
    if [[ "$BLUETOOTH_DEVICE_NAME" ]]; then
      DEVICE_NAME="$BLUETOOTH_DEVICE_NAME"
    else
-     DEVICE_NAME=$(printf "balenaSound %s" $(hostname | cut -c -4))
+     DEVICE_NAME=$(printf "Boombox %s" $(hcitool dev | grep -o "[[:xdigit:]:]\{11,17\}"))
    fi
 fi
 
