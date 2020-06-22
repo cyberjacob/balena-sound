@@ -1,5 +1,9 @@
 FROM ivdata/snapclient
 
+RUN  apt-get update \
+  && apt-get install -y curl \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY start.sh /usr/src/
 RUN chmod +x /usr/src/start.sh
 
