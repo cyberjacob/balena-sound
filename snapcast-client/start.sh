@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Waiting for fleet supervisor..."
+
 # Wait for fleet-supervisor to start up
 # We need this because fleet-supervisor depends on resin_supervisor, which has no support for depends_on
 while ! curl -s "http://localhost:3000"; do sleep 1; done
