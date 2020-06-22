@@ -3,7 +3,7 @@ FROM debian:stretch
 ENV DBUS_SYSTEM_BUS_ADDRESS=unix:path=/host/run/dbus/system_bus_socket
 ENV UDEV=1
 
-RUN apt-get update -qq; apt-get install -y --no-install-recommends install \
+RUN apt-get update -qq; apt-get install -y --no-install-recommends \
   alsa-utils \
   bluealsa \
   bluez \
