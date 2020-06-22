@@ -8,6 +8,8 @@ const masterServer = new MasterServer({ defaultAddress: getIPAddress() })
 const fleetPublisher = new cote.Publisher({ name: 'Fleet publisher' })
 const fleetSubscriber = new cote.Subscriber({ name: 'Fleet subscriber' })
 
+console.log("Starting supervisor. My IP is: "+getIPAddress())
+
 // Connect to the local snapcast server
 // On audio playback, set this server as the master
 // Pi 1 family is not powerful enough to run snapcast-server, don't attempt to connect

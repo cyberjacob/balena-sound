@@ -18,6 +18,8 @@ services:
       - 3000:3000
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - INTERFACE: wlan0
   snapcast-server:
     build: 
       context: ./snapcast-server
