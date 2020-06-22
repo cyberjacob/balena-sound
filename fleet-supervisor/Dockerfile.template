@@ -1,4 +1,6 @@
-FROM node-dood-base
+FROM node
+
+RUN apt update; apt install docker.io
 
 COPY . .
 RUN JOBS=MAX npm install --only=production
