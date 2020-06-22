@@ -1,6 +1,6 @@
 FROM node
 
-RUN apt update; apt install docker.io
+RUN apt-get update -qq; apt-get install -y --no-install-recommends docker.io
 
 COPY . .
 RUN JOBS=MAX npm install --only=production
